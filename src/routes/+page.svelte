@@ -1,6 +1,17 @@
 <script>
 	import Keyboard from "$lib/Keyboard.svelte"
-	import { pcs, clearArray, tenElevenFix, getNormalForm, getPrimeForm, getIntervalVector, getForteNumber, getTransposition, getInversion, wrapInBrackets } from "$lib/pcs.js"
+	import {
+		pcs,
+		clearArray,
+		tenElevenFix,
+		getNormalForm,
+		getPrimeForm,
+		getIntervalVector,
+		getForteNumber,
+		getTransposition,
+		getInversion,
+		wrapInBrackets,
+	} from "$lib/pcs.js"
 
 	let normalForm, primeForm, intervalVector, forteNumber, transposition, inversion, pcsArray, pcsDisplay
 	let submitted = false
@@ -71,13 +82,16 @@
 				<div class="input-wrapper d-flex flex-column align-items-center gap-2">
 					<div>
 						<h1 class="text-light">Pitch Class Set Calculator</h1>
-						<p class="text-light">For pitch class sets <strong>up to 9 pitches in length</strong>. Input pitch classes using the keyboard 🎹 and press <span class="bg-primary px-1 rounded-1">submit.</span></p>
+						<p class="text-light">
+							For pitch class sets <strong>up to 9 pitches in length</strong>. Input pitch classes using the keyboard 🎹 and press
+							<span class="bg-primary px-1 rounded-1">submit.</span>
+						</p>
 					</div>
 					<div class="d-flex justify-content-center w-100">
 						<Keyboard />
 					</div>
 					<div class="user-input d-flex w-100 shadow">
-						<input type="text" class="form-control w-100" bind:value="{pcsDisplay}" />
+						<input class="form-control w-100" type="text" readonly bind:value="{pcsDisplay}" />
 						<button class="btn btn-danger rounded-0" on:click="{clearInput}">Clear</button>
 						<button class="btn btn-primary" on:click="{submit}">Submit</button>
 					</div>
@@ -109,7 +123,10 @@
 							<div class="d-flex flex-column gap-2 align-items-center p-4 rounded-2 h-100 shadow" style="background: #F2B705;">
 								<h2>Prime Form</h2>
 								<h2>{wrapInBrackets(primeForm)}</h2>
-								<select class="form-select" bind:value="{transposePrimeSelect}" on:input="{(event) => transposePrime(Number(event.target.value))}">
+								<select
+									class="form-select"
+									bind:value="{transposePrimeSelect}"
+									on:input="{(event) => transposePrime(Number(event.target.value))}">
 									<option selected disabled value="default">Transpose Tn</option>
 									{#each Array.from({ length: 12 }, (_, i) => i) as i}
 										<option value="{i}">{i}</option>
@@ -219,7 +236,13 @@
 		color: #fff;
 	}
 
-	h1, h2, p, tr, th, td, button {
+	h1,
+	h2,
+	p,
+	tr,
+	th,
+	td,
+	button {
 		font-family: "Poppins", sans-serif;
 		font-weight: 300;
 	}
