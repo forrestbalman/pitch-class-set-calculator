@@ -71,7 +71,7 @@
 				<div class="input-wrapper d-flex flex-column align-items-center gap-2">
 					<div>
 						<h1 class="text-light">Pitch Class Set Calculator</h1>
-						<p class="text-light">For pitch class sets <strong>up to 9 pitches in length</strong>. Input pitch classes using the keybord 🎹 and press <span class="bg-primary px-1 rounded-1">submit.</span></p>
+						<p class="text-light">For pitch class sets <strong>up to 9 pitches in length</strong>. Input pitch classes using the keyboard 🎹 and press <span class="bg-primary px-1 rounded-1">submit.</span></p>
 					</div>
 					<div class="d-flex justify-content-center w-100">
 						<Keyboard />
